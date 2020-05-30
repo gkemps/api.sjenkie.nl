@@ -10,7 +10,7 @@ import (
 func main() {
 	r := gin.Default()
 
-	jsonFile, err := os.Open("conf/auth.json")
+	jsonFile, err := os.Open("../conf/auth.json")
 	if err != nil {
 		panic(err)
 	}
