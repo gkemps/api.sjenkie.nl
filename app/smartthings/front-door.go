@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
+	"log"
 	"net/http"
 )
 
@@ -12,6 +13,9 @@ const openFrontDoorUrl = "open-front-door"
 const closeFrontDoorUrl = "close-front-door"
 
 func (st *Service) OpenFrontDoor(c *gin.Context) {
+	postBody, _ := ioutil.ReadAll(c.Request.Body)
+	log.Printf("POST body: %s", string(postBody))
+
 	openFrontDoorUrl, found := st.settings.Urls[openFrontDoorUrl]
 	if !found {
 		c.JSON(422, map[string]interface{}{"error": "url not found"})
@@ -29,6 +33,9 @@ func (st *Service) OpenFrontDoor(c *gin.Context) {
 }
 
 func (st *Service) CloseFrontDoor(c *gin.Context) {
+	postBody, _ := ioutil.ReadAll(c.Request.Body)
+	log.Printf("POST body: %s", string(postBody))
+
 	closeFrontDoorUrl, found := st.settings.Urls[closeFrontDoorUrl]
 	if !found {
 		c.JSON(422, map[string]interface{}{"error": "url not found"})
