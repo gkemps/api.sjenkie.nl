@@ -11,7 +11,7 @@ import (
 func (service *Service) ListCards() (string, error) {
 	r, err := http.NewRequest(
 		http.MethodGet,
-		service.BaseUrl+fmt.Sprintf("v1/user/%.f/monetary-account", service.UserId),
+		service.BaseUrl+fmt.Sprintf("v1/user/%.f/card", service.UserId),
 		nil,
 	)
 	if err != nil {
@@ -38,5 +38,5 @@ func (service *Service) ListCards() (string, error) {
 		return "", err
 	}
 
-	return "", nil
+	return string(respBody), nil
 }
