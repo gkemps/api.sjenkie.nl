@@ -19,7 +19,7 @@ func TestListCard(t *testing.T) {
 
 func getBunqService() *bunq.Service {
 	service, err := bunq.NewService(
-		"https://public-api.sandbox.bunq.com/",
+		"https://public-api.sandbox.bunq.com/v1/",
 		"sandbox_3b24855f212fb7fb6e1e50f6a8a5d6392c0e2e6f97cd7e8d93fc3a52",
 	)
 	if err != nil {

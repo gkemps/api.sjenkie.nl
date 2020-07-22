@@ -25,7 +25,7 @@ func (service *Service) Installation() (string, error) {
 
 	r, err := http.NewRequest(
 		http.MethodPost,
-		service.BaseUrl+"v1/installation",
+		service.BaseUrl+"installation",
 		bytes.NewBuffer(bodyRaw),
 	)
 	if err != nil {

@@ -28,7 +28,7 @@ func (service *Service) NewDevice(description string, ips []string) error {
 
 	r, err := http.NewRequest(
 		http.MethodPost,
-		service.BaseUrl+"v1/device-server",
+		service.BaseUrl+"device-server",
 		bytes.NewBuffer(bodyRaw),
 	)
 	if err != nil {

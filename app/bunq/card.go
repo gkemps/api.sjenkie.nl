@@ -11,7 +11,7 @@ import (
 func (service *Service) ListCards() (string, error) {
 	r, err := http.NewRequest(
 		http.MethodGet,
-		service.BaseUrl+fmt.Sprintf("v1/user/%.f/card", service.UserId),
+		service.BaseUrl+fmt.Sprintf("user/%.f/card", service.UserId),
 		nil,
 	)
 	if err != nil {

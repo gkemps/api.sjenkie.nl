@@ -25,7 +25,7 @@ func (service *Service) CreateSession() (string, float64, error) {
 
 	r, err := http.NewRequest(
 		http.MethodPost,
-		service.BaseUrl+"v1/session-server",
+		service.BaseUrl+"session-server",
 		bytes.NewBuffer(bodyRaw),
 	)
 	if err != nil {
